@@ -1,504 +1,161 @@
 <!DOCTYPE html>
-<html lang="id">
-
+<html lang="id" data-bs-theme="light">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Rizky Fajar Anugrah - Professional Portfolio</title>
-    <link rel="icon" href="assets/img/avataaars.png" type="image/x-icon">
-    
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rizky Fajar Anugrah - Portofolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
 
-    <style>
-        :root {
-            --bg-light-primary: #F9FAFB;      /* Latar belakang utama (off-white) */
-            --bg-light-secondary: #FFFFFF;    /* Latar belakang untuk kartu/panel (putih) */
-            --text-dark: #1F2937;          /* Warna teks utama (dark charcoal) */
-            --text-muted: #6B7281;         /* Warna teks sekunder (gray) */
-            --accent-color: #2563EB;       /* Warna aksen (biru profesional) */
-            --accent-color-hover: #1D4ED8;  /* Warna aksen saat di-hover */
-            --border-color: #E5E7EB;       /* Warna border (light gray) */
-        }
+    .hero {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
 
-        body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-light-primary);
-            color: var(--text-dark);
-        }
+    .hero img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
 
-        h1, h2, h3, h4, h5, h6, .navbar-brand {
-            font-family: 'Poppins', sans-serif;
-            color: var(--text-dark);
-        }
-        
-        /* -- Navbar -- */
-        #mainNav {
-            background-color: var(--bg-light-secondary);
-            border-bottom: 1px solid var(--border-color);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            transition: padding-top 0.3s, padding-bottom 0.3s;
-        }
-        .nav-link {
-            color: var(--text-muted) !important;
-            font-weight: 700;
-            transition: color 0.3s;
-        }
-        .nav-link:hover, .nav-link.active {
-            color: var(--accent-color) !important;
-        }
+    .portfolio-card img {
+      border-radius: 6px;
+    }
 
-        /* -- Tombol Global -- */
-        .btn-primary {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: #FFFFFF;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-        .btn-primary:hover {
-            background-color: var(--accent-color-hover);
-            border-color: var(--accent-color-hover);
-        }
-        .btn-outline-primary {
-            border-color: var(--accent-color);
-            color: var(--accent-color);
-        }
-        .btn-outline-primary:hover {
-            background-color: var(--accent-color);
-            color: #FFFFFF;
-        }
-
-        /* -- Header -- */
-        .masthead {
-            background-color: var(--bg-light-primary);
-            padding-top: 150px;
-            padding-bottom: 150px;
-        }
-        .masthead .profile-img {
-            border: 5px solid var(--bg-light-secondary);
-            border-radius: 50%;
-            box-shadow: 0 0 0 5px var(--accent-color), 0 10px 30px rgba(0,0,0,0.1);
-        }
-        .masthead h1 {
-            font-size: 3.5rem;
-        }
-        .masthead h2 {
-            font-size: 1.5rem;
-            font-family: 'Lato', sans-serif;
-            font-weight: 400;
-            color: var(--text-muted);
-        }
-
-        /* -- Garis Bintang -- */
-        .star-divider {
-            margin: 2rem 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .star-divider .line {
-            width: 100%;
-            max-width: 7rem;
-            height: 0.25rem;
-            background-color: var(--border-color);
-            border-radius: 1rem;
-        }
-        .star-divider .icon {
-            font-size: 2rem;
-            padding: 0 1.5rem;
-            color: var(--accent-color);
-        }
-
-        /* -- Section Styles -- */
-        .section-highlight {
-            background-color: var(--bg-light-secondary);
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-        }
-        section h2 {
-            font-size: 2.5rem;
-        }
-
-        /* -- Skill Section -- */
-        .skill-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            background-color: var(--bg-light-secondary);
-            border-radius: 8px;
-            width: 140px;
-            text-align: center;
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-            border: 1px solid var(--border-color);
-        }
-        .skill-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
-        }
-        .skill-item img {
-            width: 50px;
-            height: 50px;
-            margin-bottom: 15px;
-            object-fit: contain;
-        }
-        .skill-item span {
-            font-family: 'Lato', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-
-        /* -- Portfolio -- */
-        .portfolio-item {
-            position: relative;
-            display: block;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: box-shadow 0.3s ease;
-        }
-        .portfolio-item:hover {
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        .portfolio-item-caption {
-            background-color: rgba(37, 99, 235, 0.9); /* Warna aksen dengan transparansi */
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .portfolio-item:hover .portfolio-item-caption {
-            opacity: 1;
-        }
-
-        /* -- Contact Form -- */
-        .form-control {
-            background-color: var(--bg-light-secondary);
-            color: var(--text-dark);
-            border: 1px solid var(--border-color);
-        }
-        .form-control:focus {
-            background-color: var(--bg-light-secondary);
-            color: var(--text-dark);
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 0.25rem rgba(37, 99, 235, 0.25);
-        }
-
-        /* -- Footer -- */
-        .footer {
-            background-color: var(--bg-light-secondary);
-            color: var(--text-dark);
-        }
-        .copyright {
-            background-color: var(--bg-light-primary);
-        }
-        .btn-social {
-            border: 2px solid var(--text-muted);
-            color: var(--text-muted);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        .btn-social:hover {
-            background-color: var(--accent-color);
-            border-color: var(--accent-color);
-            color: #FFFFFF;
-        }
-        
-    </style>
+    .lang-toggle, .theme-toggle {
+      cursor: pointer;
+    }
+  </style>
 </head>
-
-<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
-    
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top text-uppercase" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="#page-top">
-                <img src="assets/img/avataaars.png" style="width: 40px; height: 40px; margin-right: 10px;"> RFA
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Tentang</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Proyek</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skill">Skills</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontak</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <header class="text-center masthead">
-        <div class="container d-flex align-items-center flex-column">
-            <img class="profile-img mb-5" src="assets/img/iki2.jpg" alt="Foto Profil Rizky Fajar Anugrah" width="200" height="200" data-aos="zoom-in">
-            <h1 class="mb-2" data-aos="fade-up">Rizky Fajar Anugrah</h1>
-            <div class="star-divider">
-                <div class="line"></div>
-                <div class="icon"><i class="fa fa-star"></i></div>
-                <div class="line"></div>
-            </div>
-            <h2 class="font-weight-light mb-0" data-aos="fade-up" data-aos-delay="200">Web Developer - Full-Stack Developer</h2>
-        </div>
-    </header>
-
-    <section class="py-5 section-highlight" id="about">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center text-uppercase mb-4">Tentang Saya</h2>
-            <div class="star-divider">
-                <div class="line"></div><div class="icon"><i class="fa fa-star"></i></div><div class="line"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="lead text-muted mb-4">
-                        Saya adalah seorang programmer dengan hasrat kuat untuk memecahkan masalah melalui kode. Saya selalu berusaha memperluas pengetahuan di bidang teknologi dan bersemangat untuk menghadapi tantangan baru.
-                    </p>
-                    <p class="lead text-muted mb-4">
-                        Tujuan saya adalah menggunakan keahlian ini untuk memberikan dampak positif, baik bagi perusahaan, lingkungan sekitar, maupun untuk pengembangan diri saya di masa depan. Saya percaya kolaborasi adalah kunci untuk menciptakan solusi inovatif.
-                    </p>
-                    <button class="btn btn-primary btn-xl" onclick="downloadCV()">
-                        <i class="fa fa-download me-2"></i>Unduh CV
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5" id="portfolio">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center text-uppercase mb-4">Proyek Terbaru</h2>
-            <div class="star-divider">
-                <div class="line"></div><div class="icon"><i class="fa fa-star"></i></div><div class="line"></div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <a class="portfolio-item" href="#portfolio-modal-1" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/kfpb-login.png" alt="Project e-KFPB">
-                    </a>
-                </div>
-                <div class="col-md-6 col-lg-4 mb-5">
-                    <a class="portfolio-item" href="#portfolio-modal-2" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img class="img-fluid" src="assets/img/portfolio/esdm-login.png" alt="Project eSDM">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 section-highlight" id="skill">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center text-uppercase mb-4">Tech Stack & Skills</h2>
-            <div class="star-divider">
-                <div class="line"></div><div class="icon"><i class="fa fa-star"></i></div><div class="line"></div>
-            </div>
-
-            <div class="mb-5">
-                <h4 class="text-center text-muted mb-4">Frontend Development</h4>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <div class="skill-item"><img src="assets/img/skills/html-5.png"><span>HTML5</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/css.png"><span>CSS3</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/js.png"><span>JavaScript</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/bootstrap.png"><span>Bootstrap</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/tailwind.svg"><span>Tailwind CSS</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/vue.svg"><span>Vue.js</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/vuetify.svg"><span>Vuetify</span></div>
-                </div>
-            </div>
-
-            <div class="mb-5">
-                <h4 class="text-center text-muted mb-4">Backend Development</h4>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <div class="skill-item"><img src="assets/img/skills/laravel.svg"><span>Laravel</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/ci.svg"><span>CodeIgniter</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/express.svg"><span>Express.js</span></div>
-                </div>
-            </div>
-            
-            <div>
-                <h4 class="text-center text-muted mb-4">Databases & Tools</h4>
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <div class="skill-item"><img src="assets/img/skills/mysql.svg"><span>MySQL</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/pg.svg"><span>PostgreSQL</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/github.svg"><span>GitHub</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/jira.png"><span>Jira</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/postman.jpg"><span>Postman</span></div>
-                    <div class="skill-item"><img src="assets/img/skills/google-cloud.svg"><span>Google Cloud</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5" id="contact">
-        <div class="container" data-aos="fade-up">
-            <h2 class="text-center text-uppercase mb-4">Hubungi Saya</h2>
-            <div class="star-divider">
-                <div class="line"></div><div class="icon"><i class="fa fa-star"></i></div><div class="line"></div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <form id="contactForm" name="sentMessage">
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Nama Anda" required>
-                            <label for="name">Nama</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="email@anda.com" required>
-                            <label for="email">Alamat Email</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="Nomor Telepon">
-                            <label for="phone">Nomor Telepon (Opsional)</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" placeholder="Pesan Anda" style="height: 10rem" required></textarea>
-                            <label for="message">Pesan</label>
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-primary btn-xl" id="sendMessageButton" type="button" onclick="generateWhatsAppMessage()">
-                                <i class="fa fa-paper-plane me-2"></i>Kirim Pesan via WhatsApp
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="text-center footer py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 mb-5 mb-lg-0">
-                    <h4 class="text-uppercase mb-4">Mari Terhubung</h4>
-                    <p class="lead text-muted mb-4">Saya percaya kolaborasi akan menghasilkan karya luar biasa. <br>Mari satukan ide dan energi kita!</p>
-                    <a class="btn btn-social mx-1" href="https://gitlab.com/rizkyfjra" target="_blank" aria-label="GitLab"><i class="fa fa-fw fa-gitlab"></i></a>
-                    <a class="btn btn-social mx-1" href="https://github.com/rizkyfajr" target="_blank" aria-label="GitHub"><i class="fa fa-fw fa-github"></i></a>
-                    <a class="btn btn-social mx-1" href="https://www.instagram.com/USERNAME_ANDA/" target="_blank" aria-label="Instagram"><i class="fa fa-fw fa-instagram"></i></a>
-                    <a class="btn btn-social mx-1" href="https://www.linkedin.com/in/rizky-fajar-anugrah-aa826718a/" target="_blank" aria-label="LinkedIn"><i class="fa fa-fw fa-linkedin"></i></a>
-                    <a class="btn btn-social mx-1" href="https://t.me/anuggrh" target="_blank" aria-label="Telegram"><i class="fa fa-fw fa-telegram"></i></a>
-                    <a class="btn btn-social mx-1" href="mailto:rizkyfajaranugrah2@gmail.com" target="_blank" aria-label="Email"><i class="fa fa-fw fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <div class="text-center copyright py-4">
-        <div class="container">
-            <small class="text-muted">Copyright &copy; Rizky Fajar Anugrah 2025</small>
-        </div>
+<body>
+  <!-- Header -->
+  <header class="hero">
+    <img src="assets/img/iki2.jpg" alt="Rizky Fajar Anugrah" />
+    <h1 id="name">Rizky Fajar Anugrah</h1>
+    <p id="role">Web Developer | Fullstack Developer</p>
+    <div class="mt-4">
+      <a href="assets/download/CV Rizky Fajar Anugrah.pdf" class="btn btn-light me-2" download>📄 Unduh CV</a>
+      <a href="https://wa.me/6281243438087" class="btn btn-outline-light">💬 Hubungi Saya</a>
     </div>
+  </header>
 
-    <div class="modal fade" role="dialog" tabindex="-1" id="portfolio-modal-1">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <h2 class="text-uppercase mb-0">e-KFPB</h2>
-                                <div class="star-divider"><div class="line"></div><i class="fa fa-star icon"></i><div class="line"></div></div>
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/dashboard-kfpb.png" alt="Dashboard e-KFPB">
-                                <p class="mb-4 text-muted">Mengembangkan dan memelihara aplikasi internal untuk Kimia Farma Plant Banjaran (KFPB) yang digunakan untuk mengelola berbagai data operasional perusahaan. Saya bertanggung jawab pada beberapa modul kunci.</p>
-                                <ul class="list-unstyled text-start mb-4">
-                                    <li><i class="fa fa-check-circle text-primary me-2"></i><strong>SPPTEK:</strong> Modul untuk permintaan pembelian barang teknik.</li>
-                                    <li><i class="fa fa-check-circle text-primary me-2"></i><strong>QMS:</strong> Modul Quality Management System untuk pengendalian dokumen, change control, dan penyimpangan.</li>
-                                </ul>
-                                <p class="mb-4"><strong>Teknologi:</strong> PHP Native, SQL, jQuery, Bootstrap.</p>
-                                <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fa fa-times fa-fw"></i> Tutup Proyek</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Language & Theme Toggle -->
+  <div class="container py-3 d-flex justify-content-between">
+    <div>
+      <span class="lang-toggle me-2" onclick="setLanguage('id')">🇮🇩</span>
+      <span class="lang-toggle" onclick="setLanguage('en')">🇬🇧</span>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="portfolio-modal-2">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
-                <div class="modal-body text-center pb-5">
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <h2 class="text-uppercase mb-0">eSDM</h2>
-                                <div class="star-divider"><div class="line"></div><i class="fa fa-star icon"></i><div class="line"></div></div>
-                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/esdm-login.png" alt="Login eSDM">
-                                <p class="mb-4 text-muted">Membangun aplikasi eSDM untuk manajemen sumber daya manusia, dengan fokus utama pada sistem absensi karyawan di Kimia Farma. Aplikasi ini memiliki dua level pengguna (Admin dan Pegawai).</p>
-                                <ul class="list-unstyled text-start mb-4">
-                                    <li><i class="fa fa-check-circle text-primary me-2"></i><strong>Fitur Utama:</strong> Pencatatan absensi, manajemen data pegawai, rekapitulasi laporan.</li>
-                                    <li><i class="fa fa-check-circle text-primary me-2"></i><strong>Integrasi API:</strong> Mengembangkan API untuk sinkronisasi data pegawai dan absensi ke sistem pusat Kimia Farma.</li>
-                                </ul>
-                                <p class="mb-4"><strong>Teknologi:</strong> PHP, SQL, jQuery, REST API.</p>
-                                <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fa fa-times fa-fw"></i> Tutup Proyek</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+      <button class="btn btn-sm btn-outline-primary theme-toggle" onclick="toggleTheme()">🌓 Tema</button>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    
-    <script>
-        // Inisialisasi AOS
-        AOS.init({
-            duration: 800,
-            once: true
-        });
+  <!-- About Section -->
+  <section class="container py-5" id="about">
+    <h2 class="text-center mb-4" id="aboutTitle">Tentang Saya</h2>
+    <p class="lead text-center" id="aboutText">
+      Saya memiliki minat yang tinggi dalam pengembangan web dan teknologi modern. Saya siap berkolaborasi untuk menciptakan solusi digital terbaik.
+    </p>
+  </section>
 
-        // Fungsi Download CV
-        function downloadCV() {
-            const fileUrl = 'assets/download/CV Rizky Fajar Anugrah.pdf';
-            const link = document.createElement('a');
-            link.href = fileUrl;
-            link.download = 'CV_Rizky_Fajar_Anugrah.pdf';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+  <!-- Portfolio Section -->
+  <section class="container py-5" id="portfolio">
+    <h2 class="text-center mb-4" id="portfolioTitle">Proyek</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card portfolio-card">
+          <img src="assets/img/portfolio/kfpb-login.png" class="card-img-top" alt="KFPB Project" />
+          <div class="card-body">
+            <h5 class="card-title">e-KFPB</h5>
+            <p class="card-text">Aplikasi pengelolaan internal Kimia Farma berbasis PHP native.</p>
+            <span class="badge bg-primary">PHP</span>
+            <span class="badge bg-secondary">SQL</span>
+            <span class="badge bg-info">jQuery</span>
+          </div>
+        </div>
+      </div>
+      <!-- Tambahkan kartu lainnya di sini -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="container py-5" id="contact">
+    <h2 class="text-center mb-4" id="contactTitle">Kontak</h2>
+    <form class="mx-auto" style="max-width: 500px;">
+      <div class="mb-3">
+        <label for="name" class="form-label" id="formNameLabel">Nama</label>
+        <input type="text" class="form-control" id="formName" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label" id="formEmailLabel">Email</label>
+        <input type="email" class="form-control" id="formEmail" required />
+      </div>
+      <div class="mb-3">
+        <label for="message" class="form-label" id="formMessageLabel">Pesan</label>
+        <textarea class="form-control" id="formMessage" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Kirim</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-light">
+    <p class="mb-0">© 2025 Rizky Fajar Anugrah</p>
+    <div class="mt-2">
+      <a href="https://github.com/rizkyfajr" target="_blank" class="me-3"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/rizky-fajar-anugrah-aa826718a" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const currentTheme = html.getAttribute('data-bs-theme');
+      html.setAttribute('data-bs-theme', currentTheme === 'light' ? 'dark' : 'light');
+    }
+
+    function setLanguage(lang) {
+      const translations = {
+        id: {
+          aboutTitle: "Tentang Saya",
+          aboutText: "Saya memiliki minat yang tinggi dalam pengembangan web dan teknologi modern. Saya siap berkolaborasi untuk menciptakan solusi digital terbaik.",
+          portfolioTitle: "Proyek",
+          contactTitle: "Kontak",
+          formNameLabel: "Nama",
+          formEmailLabel: "Email",
+          formMessageLabel: "Pesan"
+        },
+        en: {
+          aboutTitle: "About Me",
+          aboutText: "I'm highly passionate about web development and modern technology. Ready to collaborate and create impactful digital solutions.",
+          portfolioTitle: "Projects",
+          contactTitle: "Contact",
+          formNameLabel: "Name",
+          formEmailLabel: "Email",
+          formMessageLabel: "Message"
         }
+      };
 
-        // Fungsi Generate Pesan WhatsApp
-        function generateWhatsAppMessage() {
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value;
-            var phone = document.getElementById('phone').value;
-            var message = document.getElementById('message').value;
+      const text = translations[lang];
+      document.getElementById("aboutTitle").innerText = text.aboutTitle;
+      document.getElementById("aboutText").innerText = text.aboutText;
+      document.getElementById("portfolioTitle").innerText = text.portfolioTitle;
+      document.getElementById("contactTitle").innerText = text.contactTitle;
+      document.getElementById("formNameLabel").innerText = text.formNameLabel;
+      document.getElementById("formEmailLabel").innerText = text.formEmailLabel;
+      document.getElementById("formMessageLabel").innerText = text.formMessageLabel;
+    }
+  </script>
 
-            if (!name || !email || !message) {
-                alert('Mohon isi kolom Nama, Email, dan Pesan.');
-                return;
-            }
-
-            var whatsappMessage = "Halo, saya " + name + ".\n\n" +
-                                "Pesan: " + message + "\n\n" +
-                                "Anda bisa menghubungi saya kembali melalui email: " + email + 
-                                (phone ? " atau telepon: " + phone : "") + ".\n\n" +
-                                "Terima kasih.";
-
-            var whatsappURL = "https://wa.me/6281243438087?text=" + encodeURIComponent(whatsappMessage);
-
-            window.open(whatsappURL, '_blank');
-        }
-    </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
