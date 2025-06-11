@@ -8,154 +8,247 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
     }
-
     .hero {
       background: linear-gradient(to right, #1e3c72, #2a5298);
       color: white;
-      padding: 100px 20px;
+      padding: 120px 0 80px;
       text-align: center;
     }
-
     .hero img {
       width: 150px;
       height: 150px;
       object-fit: cover;
       border-radius: 50%;
-      margin-bottom: 20px;
+      border: 4px solid white;
     }
-
-    .portfolio-card img {
-      border-radius: 6px;
+    .navbar-brand {
+      font-weight: bold;
     }
-
-    .lang-toggle, .theme-toggle {
-      cursor: pointer;
+    section {
+      padding: 60px 0;
+    }
+    .skill-icon {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+    }
+    footer a {
+      color: inherit;
     }
   </style>
 </head>
-<body>
-  <!-- Header -->
-  <header class="hero">
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="70" tabindex="0">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="#">RFA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Proyek</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Skill</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+        <li class="nav-item"><a class="nav-link lang-toggle" onclick="setLanguage('id')">🇮🇩</a></li>
+        <li class="nav-item"><a class="nav-link lang-toggle" onclick="setLanguage('en')">🇬🇧</a></li>
+        <li class="nav-item">
+          <button class="btn btn-sm btn-outline-primary ms-2" onclick="toggleTheme()">🌓</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<header class="hero" id="home">
+  <div class="container">
     <img src="assets/img/iki2.jpg" alt="Rizky Fajar Anugrah" />
-    <h1 id="name">Rizky Fajar Anugrah</h1>
-    <p id="role">Web Developer | Fullstack Developer</p>
-    <div class="mt-4">
+    <h1 class="mt-4" id="name">Rizky Fajar Anugrah</h1>
+    <p class="lead" id="role">Full-Stack Web Developer</p>
+    <div class="mt-3">
       <a href="assets/download/CV Rizky Fajar Anugrah.pdf" class="btn btn-light me-2" download>📄 Unduh CV</a>
       <a href="https://wa.me/6281243438087" class="btn btn-outline-light">💬 Hubungi Saya</a>
     </div>
-  </header>
-
-  <!-- Language & Theme Toggle -->
-  <div class="container py-3 d-flex justify-content-between">
-    <div>
-      <span class="lang-toggle me-2" onclick="setLanguage('id')">🇮🇩</span>
-      <span class="lang-toggle" onclick="setLanguage('en')">🇬🇧</span>
-    </div>
-    <div>
-      <button class="btn btn-sm btn-outline-primary theme-toggle" onclick="toggleTheme()">🌓 Tema</button>
+  </div>
+</header>
+<!-- TENTANG SAYA -->
+<section class="bg-light" id="about">
+  <div class="container">
+    <h2 class="text-center mb-4" id="aboutTitle">Tentang Saya</h2>
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center">
+        <img src="assets/img/iki2.jpg" alt="Foto Profil" class="img-fluid rounded-circle" style="max-width: 200px;" />
+      </div>
+      <div class="col-md-8">
+        <p id="aboutText">
+          Saya, Rizky Fajar Anugrah, memiliki minat yang kuat dalam pemrograman dan selalu berusaha memperluas
+          pengetahuan di bidang ini. Saya ingin memberikan manfaat melalui solusi teknologi yang saya kembangkan,
+          baik untuk perusahaan, masyarakat, maupun masa depan saya sendiri.
+        </p>
+      </div>
     </div>
   </div>
+</section>
 
-  <!-- About Section -->
-  <section class="container py-5" id="about">
-    <h2 class="text-center mb-4" id="aboutTitle">Tentang Saya</h2>
-    <p class="lead text-center" id="aboutText">
-      Saya memiliki minat yang tinggi dalam pengembangan web dan teknologi modern. Saya siap berkolaborasi untuk menciptakan solusi digital terbaik.
-    </p>
-  </section>
-
-  <!-- Portfolio Section -->
-  <section class="container py-5" id="portfolio">
-    <h2 class="text-center mb-4" id="portfolioTitle">Proyek</h2>
+<!-- PORTOFOLIO -->
+<section id="portfolio">
+  <div class="container">
+    <h2 class="text-center mb-4" id="portfolioTitle">Proyek Terbaru</h2>
     <div class="row g-4">
+      <!-- Proyek 1 -->
       <div class="col-md-4">
-        <div class="card portfolio-card">
-          <img src="assets/img/portfolio/kfpb-login.png" class="card-img-top" alt="KFPB Project" />
+        <div class="card h-100 shadow">
+          <img src="assets/img/portfolio/kfpb-login.png" class="card-img-top" alt="e-KFPB" />
           <div class="card-body">
             <h5 class="card-title">e-KFPB</h5>
-            <p class="card-text">Aplikasi pengelolaan internal Kimia Farma berbasis PHP native.</p>
+            <p class="card-text">Aplikasi internal Kimia Farma. Mengelola permintaan barang teknik, QMS, dan Change Control.</p>
             <span class="badge bg-primary">PHP</span>
             <span class="badge bg-secondary">SQL</span>
-            <span class="badge bg-info">jQuery</span>
+            <span class="badge bg-info text-dark">jQuery</span>
           </div>
         </div>
       </div>
-      <!-- Tambahkan kartu lainnya di sini -->
-    </div>
-  </section>
 
-  <!-- Contact Section -->
-  <section class="container py-5" id="contact">
-    <h2 class="text-center mb-4" id="contactTitle">Kontak</h2>
-    <form class="mx-auto" style="max-width: 500px;">
+      <!-- Proyek 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow">
+          <img src="assets/img/portfolio/esdm-login.png" class="card-img-top" alt="eSDM" />
+          <div class="card-body">
+            <h5 class="card-title">eSDM</h5>
+            <p class="card-text">Sistem absensi karyawan Kimia Farma dengan API integrasi dan dua level user.</p>
+            <span class="badge bg-primary">PHP</span>
+            <span class="badge bg-secondary">SQL</span>
+            <span class="badge bg-info text-dark">jQuery</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyek 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow">
+          <img src="assets/img/portfolio/edocs-login.png" class="card-img-top" alt="eDocs" />
+          <div class="card-body">
+            <h5 class="card-title">eDocs</h5>
+            <p class="card-text">Pengelolaan dokumen internal berbasis web. Mendukung versi dokumen dan hak akses terkontrol.</p>
+            <span class="badge bg-primary">PHP</span>
+            <span class="badge bg-secondary">MySQL</span>
+            <span class="badge bg-success">Bootstrap</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILL -->
+<section id="skills" class="bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4" id="skillTitle">Skill & Tools</h2>
+    <div class="row text-center gy-4">
+      <!-- Baris 1 -->
+      <div class="col-3 col-md-2"><img src="assets/img/skills/html-5.png" class="skill-icon" alt="HTML" /><p>HTML</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/css.png" class="skill-icon" alt="CSS" /><p>CSS</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/js.png" class="skill-icon" alt="JS" /><p>JavaScript</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/bootstrap.png" class="skill-icon" alt="Bootstrap" /><p>Bootstrap</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/tailwind.svg" class="skill-icon" alt="Tailwind" /><p>Tailwind</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/vue.svg" class="skill-icon" alt="Vue" /><p>Vue</p></div>
+
+      <!-- Baris 2 -->
+      <div class="col-3 col-md-2"><img src="assets/img/skills/vuetify.svg" class="skill-icon" alt="Vuetify" /><p>Vuetify</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/laravel.svg" class="skill-icon" alt="Laravel" /><p>Laravel</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/ci.svg" class="skill-icon" alt="CI" /><p>CodeIgniter</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/mysql.svg" class="skill-icon" alt="MySQL" /><p>MySQL</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/github.svg" class="skill-icon" alt="GitHub" /><p>GitHub</p></div>
+      <div class="col-3 col-md-2"><img src="assets/img/skills/google-cloud.svg" class="skill-icon" alt="GCP" /><p>GCP</p></div>
+    </div>
+  </div>
+</section>
+<!-- KONTAK -->
+<section id="contact">
+  <div class="container">
+    <h2 class="text-center mb-4" id="contactTitle">Hubungi Saya</h2>
+    <form class="mx-auto" style="max-width: 500px;" onsubmit="sendWhatsApp(); return false;">
       <div class="mb-3">
-        <label for="name" class="form-label" id="formNameLabel">Nama</label>
-        <input type="text" class="form-control" id="formName" required />
+        <label for="nameInput" class="form-label" id="formNameLabel">Nama</label>
+        <input type="text" class="form-control" id="nameInput" required />
       </div>
       <div class="mb-3">
-        <label for="email" class="form-label" id="formEmailLabel">Email</label>
-        <input type="email" class="form-control" id="formEmail" required />
+        <label for="emailInput" class="form-label" id="formEmailLabel">Email</label>
+        <input type="email" class="form-control" id="emailInput" required />
       </div>
       <div class="mb-3">
-        <label for="message" class="form-label" id="formMessageLabel">Pesan</label>
-        <textarea class="form-control" id="formMessage" rows="4" required></textarea>
+        <label for="messageInput" class="form-label" id="formMessageLabel">Pesan</label>
+        <textarea class="form-control" id="messageInput" rows="4" required></textarea>
       </div>
-      <button type="submit" class="btn btn-primary">Kirim</button>
+      <button type="submit" class="btn btn-primary">Kirim via WhatsApp</button>
     </form>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="text-center py-4 bg-light">
-    <p class="mb-0">© 2025 Rizky Fajar Anugrah</p>
-    <div class="mt-2">
-      <a href="https://github.com/rizkyfajr" target="_blank" class="me-3"><i class="fab fa-github"></i></a>
-      <a href="https://linkedin.com/in/rizky-fajar-anugrah-aa826718a" target="_blank"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </footer>
+<!-- FOOTER -->
+<footer class="text-center py-4 bg-primary text-white mt-5">
+  <p class="mb-1">© 2025 Rizky Fajar Anugrah</p>
+  <div class="d-flex justify-content-center gap-3">
+    <a href="https://github.com/rizkyfajr" target="_blank"><i class="fab fa-github fa-lg"></i></a>
+    <a href="https://gitlab.com/rizkyfjra" target="_blank"><i class="fab fa-gitlab fa-lg"></i></a>
+    <a href="https://linkedin.com/in/rizky-fajar-anugrah-aa826718a" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+    <a href="https://t.me/anuggrh" target="_blank"><i class="fab fa-telegram fa-lg"></i></a>
+    <a href="mailto:rizkyfajaranugrah2@gmail.com" target="_blank"><i class="fas fa-envelope fa-lg"></i></a>
+  </div>
+</footer>
 
-  <!-- Scripts -->
-  <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const currentTheme = html.getAttribute('data-bs-theme');
-      html.setAttribute('data-bs-theme', currentTheme === 'light' ? 'dark' : 'light');
+<!-- SCRIPT -->
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute('data-bs-theme');
+    html.setAttribute('data-bs-theme', current === 'light' ? 'dark' : 'light');
+  }
+
+  function setLanguage(lang) {
+    const text = {
+      id: {
+        aboutTitle: "Tentang Saya",
+        aboutText: "Saya, Rizky Fajar Anugrah, memiliki minat yang kuat dalam pemrograman dan selalu berusaha memperluas pengetahuan di bidang ini. Saya ingin memberikan manfaat melalui solusi teknologi yang saya kembangkan, baik untuk perusahaan, masyarakat, maupun masa depan saya sendiri.",
+        portfolioTitle: "Proyek Terbaru",
+        skillTitle: "Skill & Tools",
+        contactTitle: "Hubungi Saya",
+        formNameLabel: "Nama",
+        formEmailLabel: "Email",
+        formMessageLabel: "Pesan"
+      },
+      en: {
+        aboutTitle: "About Me",
+        aboutText: "I am Rizky Fajar Anugrah, passionate about programming and always expanding my knowledge in the field. I aim to create technology that benefits companies, people, and my future self.",
+        portfolioTitle: "Latest Projects",
+        skillTitle: "Skills & Tools",
+        contactTitle: "Contact Me",
+        formNameLabel: "Name",
+        formEmailLabel: "Email",
+        formMessageLabel: "Message"
+      }
+    };
+    const langText = text[lang];
+    for (const key in langText) {
+      document.getElementById(key).innerText = langText[key];
     }
+  }
 
-    function setLanguage(lang) {
-      const translations = {
-        id: {
-          aboutTitle: "Tentang Saya",
-          aboutText: "Saya memiliki minat yang tinggi dalam pengembangan web dan teknologi modern. Saya siap berkolaborasi untuk menciptakan solusi digital terbaik.",
-          portfolioTitle: "Proyek",
-          contactTitle: "Kontak",
-          formNameLabel: "Nama",
-          formEmailLabel: "Email",
-          formMessageLabel: "Pesan"
-        },
-        en: {
-          aboutTitle: "About Me",
-          aboutText: "I'm highly passionate about web development and modern technology. Ready to collaborate and create impactful digital solutions.",
-          portfolioTitle: "Projects",
-          contactTitle: "Contact",
-          formNameLabel: "Name",
-          formEmailLabel: "Email",
-          formMessageLabel: "Message"
-        }
-      };
+  function sendWhatsApp() {
+    const name = document.getElementById('nameInput').value;
+    const email = document.getElementById('emailInput').value;
+    const message = document.getElementById('messageInput').value;
+    const text = `Halo, saya ${name}. Saya ingin menghubungi Anda. Email: ${email}. Pesan: ${message}`;
+    const url = "https://wa.me/6281243438087?text=" + encodeURIComponent(text);
+    window.open(url, "_blank");
+  }
+</script>
 
-      const text = translations[lang];
-      document.getElementById("aboutTitle").innerText = text.aboutTitle;
-      document.getElementById("aboutText").innerText = text.aboutText;
-      document.getElementById("portfolioTitle").innerText = text.portfolioTitle;
-      document.getElementById("contactTitle").innerText = text.contactTitle;
-      document.getElementById("formNameLabel").innerText = text.formNameLabel;
-      document.getElementById("formEmailLabel").innerText = text.formEmailLabel;
-      document.getElementById("formMessageLabel").innerText = text.formMessageLabel;
-    }
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
