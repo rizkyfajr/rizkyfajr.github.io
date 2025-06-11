@@ -1,497 +1,501 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html data-bs-theme="dark" lang="id">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Rizky Fajar Anugrah - Portofolio</title>
+    <title>Rizky Fajar Anugrah - Professional Portfolio</title>
     <link rel="icon" href="assets/img/avataaars.png" type="image/x-icon">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=0fb2ebb34a7b0788701748ebb700a7a9">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css?h=56f808d77aa2673c3e48482098ebb731">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link href="css/splide-sea-green.min.css" rel="stylesheet" />
-    <link href="css/styles.css" rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-dark-primary: #12181B;    /* Latar belakang utama yang sangat gelap */
+            --bg-dark-secondary: #1A202C; /* Latar belakang untuk kartu/panel */
+            --text-light: #E2E8F0;         /* Warna teks utama, sedikit off-white */
+            --text-header: #FFFFFF;        /* Warna teks untuk judul, putih cerah */
+            --accent-color: #38B2AC;       /* Warna aksen (Teal) untuk tombol dan highlight */
+            --accent-color-hover: #2C7A7B;  /* Warna aksen saat di-hover */
+            --border-color: #2D3748;       /* Warna border */
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-dark-primary);
+            color: var(--text-light);
+        }
+
+        h1, h2, h3, h4, h5, h6, .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-header);
+        }
+        
+        /* -- Navbar -- */
+        #mainNav {
+            background-color: var(--bg-dark-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .navbar-brand {
+            color: var(--text-header) !important;
+            font-weight: 700;
+        }
+        .nav-link {
+            color: var(--text-light) !important;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-color) !important;
+        }
+
+        /* -- Tombol Global -- */
+        .btn-primary {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--text-header);
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: var(--accent-color-hover);
+            border-color: var(--accent-color-hover);
+        }
+
+        /* -- Header -- */
+        .masthead {
+            background-color: var(--bg-dark-primary);
+            background-image: linear-gradient(180deg, rgba(26,32,44,0.8) 0%, var(--bg-dark-primary) 100%);
+            padding-top: 150px;
+            padding-bottom: 150px;
+        }
+        .masthead .profile-img {
+            border: 5px solid var(--accent-color);
+            border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+        }
+        .masthead h1 {
+            font-size: 3.5rem;
+        }
+        .masthead h2 {
+            font-size: 1.5rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+        }
+
+        /* -- Garis Bintang -- */
+        .star-divider {
+            margin: 2rem 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .star-divider .line {
+            width: 100%;
+            max-width: 7rem;
+            height: 0.25rem;
+            background-color: var(--text-light);
+            border-radius: 1rem;
+        }
+        .star-divider .icon {
+            font-size: 2rem;
+            padding: 0 1.5rem;
+            color: var(--text-light);
+        }
+        .star-divider.star-dark .line, .star-divider.star-dark .icon {
+            background-color: var(--text-header);
+            color: var(--text-header);
+        }
+
+        /* -- Section Styles -- */
+        .section-about {
+            background-color: var(--bg-dark-secondary);
+        }
+        section h2 {
+            font-size: 2.5rem;
+        }
+
+        /* -- Skill Section -- */
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--bg-dark-secondary);
+            border-radius: 8px;
+            width: 140px;
+            text-align: center;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            border-color: var(--accent-color);
+        }
+
+        .skill-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .skill-item span {
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* -- Portfolio -- */
+        .portfolio-item {
+            position: relative;
+            display: block;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .portfolio-item-caption {
+            background-color: rgba(56, 178, 172, 0.8); /* Warna aksen dengan transparansi */
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .portfolio-item:hover .portfolio-item-caption {
+            opacity: 1;
+        }
+
+        /* -- Contact Form -- */
+        .form-control {
+            background-color: var(--bg-dark-secondary);
+            color: var(--text-light);
+            border: 1px solid var(--border-color);
+        }
+        .form-control:focus {
+            background-color: var(--bg-dark-secondary);
+            color: var(--text-light);
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(56, 178, 172, 0.25);
+        }
+        .form-label {
+            color: var(--text-light);
+        }
+
+        /* -- Footer -- */
+        .footer {
+            background-color: var(--bg-dark-secondary);
+            color: var(--text-light);
+        }
+        .copyright {
+            background-color: var(--bg-dark-primary);
+        }
+        .btn-social {
+            border-color: var(--text-light);
+            color: var(--text-light);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-social:hover {
+            background-color: var(--accent-color);
+            border-color: var(--accent-color);
+            color: var(--text-header);
+        }
+        
+    </style>
 </head>
 
 <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="72">
-    <nav class="navbar navbar-expand-lg fixed-top bg-light navbar-light" id="mainNav"
-        style="margin-bottom: -12px;">
-        <div class="container"><a class="tada animated navbar-brand text-light-emphasis" href="#page-top"><img class="tada animated img-fluid"
-            src="assets/img/avataaars.png?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"> RFA</a><button data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive"
-                class="navbar-toggler text-white bg-primary navbar-toggler-right text-uppercase rounded"
-                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><i
-                    class="fa fa-bars"></i></button>
+    
+    <nav class="navbar navbar-expand-lg fixed-top text-uppercase" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">
+                <img src="assets/img/avataaars.png" style="width: 40px; height: 40px; margin-right: 10px;"> RFA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                        href="#about">Tentang</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio"
-                            style="--bs-primary: #508ecc;--bs-primary-rgb: 80,142,204;">Proyek</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skill"
-                            style="--bs-primary: #508ecc;--bs-primary-rgb: 80,142,204;">Skill</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="#contact">Contact</a></li>
-                            <button class="btn btn-primary btn-md" id="sendMessageButton" type="submit" onclick="window.location.href='eng.html'"><img class="img-fluid"
-                                src="assets/img/united-kingdom.png?h=5bde47039f23de84a7748bee08793ac3" style="width: 25px; height: 25px;"> Eng</button>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Tentang</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Proyek</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skill">Skills</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Kontak</a></li>
                 </ul>
+                <button class="btn btn-sm btn-outline-light ms-lg-2" onclick="window.location.href='eng.html'">
+                    <img src="assets/img/united-kingdom.png" style="width: 20px; height: 20px; margin-right: 5px;"> ENG
+                </button>
             </div>
         </div>
     </nav>
-    <header class="text-center text-white bg-primary masthead"
-        style="background: url(&quot;assets/img/construction-zoom-background-9.webp?h=3bfb32b619ab2565737dbe7a72e4a70a&quot;), linear-gradient(rgb(42,42,42) 5%, black, rgb(33,33,33) 13%, rgb(46,46,46) 18%, white);">
-        <div class="container"><img class="tada animated img-fluid d-block mx-auto mb-5"
-                src="assets/img/iki2.jpg?h=6b81b80fc4f48e5fb259668d3a7b6abb" width="209" height="209"
-                style="transform: perspective(0px) translate(-15px) rotate(0deg) scale(1.16);border-radius: 4px;border-bottom-left-radius: 30px;border-bottom-right-radius: 4px;border-top-right-radius: 30px;">
-            <h1 class="bounce animated" style="font-size: 60px;">Rizky Fajar Anugrah</h1>
-            <hr class="tada animated star-light">
-            <h2 class="bounce animated font-weight-light mb-0">Web Developer | Fullstuck Developer</h2>
+
+    <header class="text-center text-white masthead">
+        <div class="container d-flex align-items-center flex-column">
+            <img class="profile-img mb-5" src="assets/img/iki2.jpg" alt="Foto Profil Rizky Fajar Anugrah" width="200" height="200" data-aos="zoom-in">
+            <h1 class="mb-2" data-aos="fade-up">Rizky Fajar Anugrah</h1>
+            <div class="star-divider">
+                <div class="line"></div>
+                <div class="icon"><i class="fa fa-star"></i></div>
+                <div class="line"></div>
+            </div>
+            <h2 class="font-weight-light mb-0" data-aos="fade-up" data-aos-delay="200">Web Developer - Full-Stack Developer</h2>
         </div>
     </header>
 
-    <section data-aos="fade-down" data-aos-duration="600" class="text-white bg-success mb-0" id="about">
-        <div class="container">
-            <h2 class="text-center text-white">Tentang Saya</h2>
-            <hr class="star-light mb-5">
-            <div class="row">
-                <div class="col-lg-12 ms-auto">
-                    <p class="lead text-justify">Saya, Rizky Fajar Anugrah, memiliki minat yang kuat dalam pemrograman dan selalu 
-                        berusaha untuk terus memperluas pengetahuan saya di bidang ini. Saya sangat ingin menggunakan 
-                        keahlian pemrograman saya untuk memberikan manfaat bagi orang banyak, perusahaan tempat saya bekerja, 
-                        dan juga untuk diri sendiri di masa depan. Saya selalu siap menghadapi tantangan baru dan berkontribusi 
-                        dalam mengembangkan solusi inovatif. Saya sangat antusias dengan prospek kerja sama yang ada di depan.</p>
-                        <div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit" onclick="downloadCV()">Unduh CV</button>
-                        </div>
-                    </div>
-                <!-- <div class="col-lg-4 me-auto"> -->
-                    <!-- <p class="lead">Whether you're a student looking to showcase your work, a professional looking to
-                        attract clients, or a graphic artist looking to share your projects, this template is the
-                        perfect starting point!</p> -->
-                <!-- </div> -->
+    <section class="py-5 section-about" id="about">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center text-uppercase mb-4">Tentang Saya</h2>
+            <div class="star-divider star-dark">
+                <div class="line"></div><div class="icon"><i class="fa fa-star"></i></div><div class="line"></div>
             </div>
-            <div class="text-center mt-4"></div>
-        </div>
-    </section>
-
-    <section data-aos="fade-up" data-aos-duration="600" id="portfolio" class="portfolio">
-        <div class="container">
-            <h2 class="text-center text-secondary">Proyek Terbaru</h2>
-            <hr class="star-dark mb-5">
             <div class="row">
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-1"
-                        data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i
-                                    class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid"
-                            src="assets/img/portfolio/kfpb-login.png?h=5bde47039f23de84a7748bee08793ac3">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-2"
-                        data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i
-                                    class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid"
-                            src="assets/img/portfolio/esdm-login.png?h=4b5723e2b00006ef3a25df097c7187dd">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-3"
-                        data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i
-                                    class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid"
-                            src="assets/img/portfolio/edocs-login.png?h=984b4ff719255fcbf2e01164905ebb90">
-                    </a></div>
-                <!-- <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-4"
-                        data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i
-                                    class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid"
-                            src="assets/img/portfolio/game.png?h=b5df08ec517f8b9872be52e015333d8a">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-5"
-                        data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i
-                                    class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid"
-                            src="assets/img/portfolio/safe.png?h=77cbc82936acf11b03bd687ff795e835">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-6"
-                        data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i
-                                    class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid"
-                            src="assets/img/portfolio/submarine.png?h=71572e367539ee27f418326f2361bce2">
-                    </a></div>
-            </div> -->
+                <div class="col-lg-8 mx-auto text-center">
+                    <p class="lead mb-4">
+                        Saya adalah seorang programmer dengan hasrat kuat untuk memecahkan masalah melalui kode. Saya selalu berusaha memperluas pengetahuan di bidang teknologi dan bersemangat untuk menghadapi tantangan baru.
+                    </p>
+                    <p class="lead mb-4">
+                        Tujuan saya adalah menggunakan keahlian ini untuk memberikan dampak positif, baik bagi perusahaan, lingkungan sekitar, maupun untuk pengembangan diri saya di masa depan. Saya percaya kolaborasi adalah kunci untuk menciptakan solusi inovatif.
+                    </p>
+                    <button class="btn btn-primary btn-xl" onclick="downloadCV()">
+                        <i class="fa fa-download me-2"></i>Unduh CV
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
-  
 
-    <section data-aos="fade-up" data-aos-duration="600" id="skill" class="skill">
-        <div class="container">
-            <h2 class="text-center text-secondary">Skill</h2>
-            <hr class="star-dark mb-5">
-
-          <div class="subheading mb-3">Bahasa Pemrograman &amp; Tools</div>
-          <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-html5"><img class="tada animated img-fluid"
-                src="assets/img/skills/js.png?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-css3"><img class="tada animated img-fluid"
-                src="assets/img/skills/bootstrap.png?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-javascript"><img class="tada animated img-fluid"
-                src="assets/img/skills/html-5.png?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-jquery"><img class="tada animated img-fluid"
-                src="assets/img/skills/express.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-sass"><img class="tada animated img-fluid"
-                src="assets/img/skills/css.png?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-less"><img class="tada animated img-fluid"
-                src="assets/img/skills/pg.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-bootstrap"><img class="tada animated img-fluid"
-                src="assets/img/skills/tailwind.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-           
-            </ul>
-            <ul class="list-inline list-icons">
-            <li class="list-inline-item">
-              <i class="devicons devicons-gulp"><img class="tada animated img-fluid"
-                src="assets/img/skills/google-cloud.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"><img class="tada animated img-fluid"
-                src="assets/img/skills/mysql.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"><img class="tada animated img-fluid"
-                src="assets/img/skills/laravel.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"><img class="tada animated img-fluid"
-                src="assets/img/skills/ci.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"><img class="tada animated img-fluid"
-                src="assets/img/skills/jira.png?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"><img class="tada animated img-fluid"
-                src="assets/img/skills/github.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-            <li class="list-inline-item">
-              <i class="devicons devicons-npm"><img class="tada animated img-fluid"
-                src="assets/img/skills/vscode.png?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-            </li>
-          </ul>
-          <ul class="list-inline list-icons">
-          <li class="list-inline-item">
-            <i class="devicons devicons-wordpress"><img class="tada animated img-fluid"
-              src="assets/img/skills/vue.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-grunt"><img class="tada animated img-fluid"
-              src="assets/img/skills/vuetify.svg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-          </li>
-          <li class="list-inline-item">
-            <i class="devicons devicons-grunt"><img class="tada animated img-fluid"
-              src="assets/img/skills/postman.jpg?h=5bde47039f23de84a7748bee08793ac3" style="width: 50px; height: 50px;"></i>
-          </li>
-          </ul>
-
-          <div class="subheading mb-3">Alur Kerja</div>
-          <ul class="fa-ul mb-0">
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Mobile-First, Responsive Design</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Browser Testing &amp; Debugging</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Cross Functional Teams</li>
-            <li>
-              <i class="fa-li fa fa-check"></i>
-              Agile Development &amp; Scrum</li>
-          </ul>
+    <section class="py-5" id="portfolio">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center text-uppercase mb-4">Proyek Terbaru</h2>
+            <div class="star-divider star-dark">
+                <div class="line"></div><div class="icon"><i class="fa fa-star"></i></div><div class="line"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <a class="portfolio-item" href="#portfolio-modal-1" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/kfpb-login.png" alt="Project e-KFPB">
+                    </a>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <a class="portfolio-item" href="#portfolio-modal-2" data-bs-toggle="modal">
+                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
+                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src="assets/img/portfolio/esdm-login.png" alt="Project eSDM">
+                    </a>
+                </div>
+                </div>
         </div>
-      </section>
+    </section>
 
+    <section class="py-5 bg-dark-secondary" id="skill">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center text-uppercase mb-4">Tech Stack & Skills</h2>
+            <div class="star-divider star-dark">
+                <div class="line"></div><div class="icon"><i class="fa fa-star"></i></div><div class="line"></div>
+            </div>
 
-    
-    <section data-aos="fade-up" data-aos-duration="600" class="bg-success" id="contact">
-        <div class="container">
-            <h2 class="text-center text-light mb-0">Terhubung</h2>
-            <hr class="star-light mb-5">
+            <div class="mb-5">
+                <h4 class="text-center mb-4">Frontend Development</h4>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <div class="skill-item"><img src="assets/img/skills/html-5.png"><span>HTML5</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/css.png"><span>CSS3</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/js.png"><span>JavaScript</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/bootstrap.png"><span>Bootstrap</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/tailwind.svg"><span>Tailwind CSS</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/vue.svg"><span>Vue.js</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/vuetify.svg"><span>Vuetify</span></div>
+                </div>
+            </div>
+
+            <div class="mb-5">
+                <h4 class="text-center mb-4">Backend Development</h4>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <div class="skill-item"><img src="assets/img/skills/laravel.svg"><span>Laravel</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/ci.svg"><span>CodeIgniter</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/express.svg"><span>Express.js</span></div>
+                </div>
+            </div>
+            
+            <div>
+                <h4 class="text-center mb-4">Databases & Tools</h4>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <div class="skill-item"><img src="assets/img/skills/mysql.svg"><span>MySQL</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/pg.svg"><span>PostgreSQL</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/github.svg"><span>GitHub</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/jira.png"><span>Jira</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/postman.jpg"><span>Postman</span></div>
+                    <div class="skill-item"><img src="assets/img/skills/google-cloud.svg"><span>Google Cloud</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="contact">
+        <div class="container" data-aos="fade-up">
+            <h2 class="text-center text-uppercase mb-4">Hubungi Saya</h2>
+            <div class="star-divider star-dark">
+                <div class="line"></div><div class="icon"><i class="fa fa-star"></i></div><div class="line"></div>
+            </div>
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <form id="contactForm" name="sentMessage">
-                        <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="text"
-                                    id="name" name="name" required="" placeholder="Name"><label
-                                    class="form-label">Nama</label><small
-                                    class="form-text text-danger help-block"></small></div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="name" type="text" placeholder="Nama Anda" required>
+                            <label for="name">Nama</label>
                         </div>
-                        <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="email"
-                                    id="email" name="email" required="" placeholder="Email Address"><label class="form-label">Email
-                                    Address</label><small class="form-text text-danger help-block"></small></div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="email" type="email" placeholder="email@anda.com" required>
+                            <label for="email">Alamat Email</label>
                         </div>
-                        <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="tel"
-                                    id="phone" name="phone" required="" placeholder="Phone Number"><label class="form-label">Telp
-                                    Number</label><small class="form-text text-danger help-block"></small></div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="phone" type="tel" placeholder="Nomor Telepon">
+                            <label for="phone">Nomor Telepon</label>
                         </div>
-                        <div class="control-group">
-                            <div class="mb-5 form-floating controls pb-2"><textarea class="form-control" id="message"
-                                    required="" name="pesan" placeholder="Message" style="height: 150px;"></textarea><label
-                                    class="form-label">Pesan</label><small
-                                    class="form-text text-danger help-block"></small></div>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" placeholder="Pesan Anda" style="height: 10rem" required></textarea>
+                            <label for="message">Pesan</label>
                         </div>
-                        <div id="success"></div>
-                        <div> <button class="btn btn-primary btn-xl" id="sendMessageButton" type="button" onclick="generateWhatsAppMessage()">Kirim</button>
+                        <div class="text-center">
+                            <button class="btn btn-primary btn-xl" id="sendMessageButton" type="button" onclick="generateWhatsAppMessage()">
+                                <i class="fa fa-paper-plane me-2"></i>Kirim Pesan via WhatsApp
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-    <footer class="text-center footer" style="background: rgb(97,138,179);">
+
+    <footer class="text-center footer py-5">
         <div class="container">
             <div class="row">
-               
-                <div class="col-lg-12 mb-2 mb-lg-0">
-                    <h4>I believe our collaboration in a project will yield extraordinary results. </h4><small>Let's unite our ideas and energy!</small><br> 
-                    <ul class="list-inline">
-                        <li class="list-inline-item"><a
-                                class="btn btn-outline-light text-center btn-social rounded-circle" role="button"
-                                href="https://gitlab.com/rizkyfjra" target="_blank"><i class="fa fa-gitlab fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a
-                                class="btn btn-outline-light text-center btn-social rounded-circle" role="button"
-                                href="https://github.com/rizkyfajr" target="_blank"><i class="fa fa-github fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a
-                                class="btn btn-outline-light text-center btn-social rounded-circle" role="button"
-                                href="#"><i class="fa fa-instagram fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a
-                                class="btn btn-outline-light text-center btn-social rounded-circle" role="button"
-                                href="https://www.linkedin.com/in/rizky-fajar-anugrah-aa826718a/" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a
-                                class="btn btn-outline-light text-center btn-social rounded-circle" role="button"
-                                href="https://t.me/anuggrh" target="_blank"><i class="fa fa-telegram fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a
-                                class="btn btn-outline-light text-center btn-social rounded-circle" role="button"
-                                href="mailto:rizkyfajaranugrah2@gmail.com" target="_blank"><i class="fa fa-mail-reply-all fa-fw"></i></a></li>
-                    </ul>
+                <div class="col-lg-12 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Mari Terhubung</h4>
+                    <p class="lead mb-4">Saya percaya kolaborasi akan menghasilkan karya luar biasa. <br>Mari satukan ide dan energi kita!</p>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://gitlab.com/rizkyfjra" target="_blank" aria-label="GitLab"><i class="fa fa-fw fa-gitlab"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/rizkyfajr" target="_blank" aria-label="GitHub"><i class="fa fa-fw fa-github"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/USERNAME_ANDA/" target="_blank" aria-label="Instagram"><i class="fa fa-fw fa-instagram"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/rizky-fajar-anugrah-aa826718a/" target="_blank" aria-label="LinkedIn"><i class="fa fa-fw fa-linkedin"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://t.me/anuggrh" target="_blank" aria-label="Telegram"><i class="fa fa-fw fa-telegram"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="mailto:rizkyfajaranugrah2@gmail.com" target="_blank" aria-label="Email"><i class="fa fa-fw fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </footer>
-    <div class="text-center text-white copyright py-4" style="background: rgb(40,89,138);">
-        <div class="container">Rizky <strong>Fajar</strong></div>
+
+    <div class="text-center copyright py-4">
+        <div class="container">
+            <small>Copyright &copy; Rizky Fajar Anugrah 2025</small>
+        </div>
     </div>
-    <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white"
-            href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
+
     <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close"
-                        data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
+                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
                                 <h2 class="text-uppercase text-secondary mb-0">e-KFPB</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5"
-                                    src="assets/img/portfolio/dashboard-kfpb.png?h=5bde47039f23de84a7748bee08793ac3">
-                                    <p class="mb-5">Mengembangkan Aplikasi Internal KFPB dan beberapa modul didalamnya. digunakan untuk mengelola data internal perusahaan di Kimia Farma. Aplikasi ini memiliki beberapa modul yang mendukung berbagai bagian di Kimia Farma, seperti SPPTEK (Surat Permintaan Pembelian Barang Teknik) yang digunakan oleh bagian Teknik untuk permintaan perbaikan di lingkungan Kimia Farma, serta QMS (Quality Management System) untuk pengendalian dokumen, Change Control, dan Penyimpangan. Aplikasi ini dikembangkan menggunakan Native PHP dan SQL.</p>
-                                    <span class="badge bg-info mx-2">PHP</span><span class="badge bg-info mx-2">sQL</span><span class="badge bg-info mx-2">jQuery</span>
-                                </div>
+                                <div class="star-divider star-dark"><div class="line"></div><i class="fa fa-star icon"></i><div class="line"></div></div>
+                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/dashboard-kfpb.png" alt="Dashboard e-KFPB">
+                                <p class="mb-4">Mengembangkan dan memelihara aplikasi internal untuk Kimia Farma Plant Banjaran (KFPB) yang digunakan untuk mengelola berbagai data operasional perusahaan. Saya bertanggung jawab pada beberapa modul kunci.</p>
+                                <ul class="list-unstyled text-start mb-4">
+                                    <li><i class="fa fa-check-circle text-success me-2"></i><strong>SPPTEK:</strong> Modul untuk permintaan pembelian barang teknik.</li>
+                                    <li><i class="fa fa-check-circle text-success me-2"></i><strong>QMS:</strong> Modul Quality Management System untuk pengendalian dokumen, change control, dan penyimpangan.</li>
+                                </ul>
+                                <p class="mb-4"><strong>Teknologi:</strong> PHP Native, SQL, jQuery, Bootstrap.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fa fa-times fa-fw"></i> Tutup Proyek</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a
-                        class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button"
-                        data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Tutup</a></div>
             </div>
         </div>
     </div>
     <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close"
-                        data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
+                <div class="modal-header border-0"><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
                                 <h2 class="text-uppercase text-secondary mb-0">eSDM</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5"
-                                    src="assets/img/portfolio/esdm-login.png?h=4b5723e2b00006ef3a25df097c7187dd">
-                                <p class="mb-5">Aplikasi eSDM digunakan untuk mendukung absensi karyawan di Kimia Farma. Aplikasi ini dikembangkan menggunakan PHP dan SQL sebagai database. Selain itu, eSDM juga dilengkapi dengan API yang memungkinkan pengiriman data pegawai dan absensi ke aplikasi Kimia Farma Pusat. Aplikasi ini memiliki dua level pengguna, yaitu admin dan pegawai sebagai pengguna biasa.
-                                </p>
-                                <span class="badge bg-info mx-2">PHP</span><span class="badge bg-info mx-2">sQL</span><span class="badge bg-info mx-2">jQuery</span>
+                                <div class="star-divider star-dark"><div class="line"></div><i class="fa fa-star icon"></i><div class="line"></div></div>
+                                <img class="img-fluid rounded mb-5" src="assets/img/portfolio/esdm-login.png" alt="Login eSDM">
+                                <p class="mb-4">Membangun aplikasi eSDM untuk manajemen sumber daya manusia, dengan fokus utama pada sistem absensi karyawan di Kimia Farma. Aplikasi ini memiliki dua level pengguna (Admin dan Pegawai).</p>
+                                <ul class="list-unstyled text-start mb-4">
+                                    <li><i class="fa fa-check-circle text-success me-2"></i><strong>Fitur Utama:</strong> Pencatatan absensi, manajemen data pegawai, rekapitulasi laporan.</li>
+                                    <li><i class="fa fa-check-circle text-success me-2"></i><strong>Integrasi API:</strong> Mengembangkan API untuk sinkronisasi data pegawai dan absensi ke sistem pusat Kimia Farma.</li>
+                                </ul>
+                                <p class="mb-4"><strong>Teknologi:</strong> PHP, SQL, jQuery, REST API.</p>
+                                <button class="btn btn-primary" data-bs-dismiss="modal"><i class="fa fa-times fa-fw"></i> Tutup Proyek</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer pb-5"><a
-                        class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button"
-                        data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Tutup</a></div>
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-3">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close"
-                        data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5"
-                                    src="assets/img/portfolio/circus.png?h=984b4ff719255fcbf2e01164905ebb90">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a
-                        class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button"
-                        data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-4">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close"
-                        data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5"
-                                    src="assets/img/portfolio/game.png?h=b5df08ec517f8b9872be52e015333d8a">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a
-                        class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button"
-                        data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-5">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close"
-                        data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5"
-                                    src="assets/img/portfolio/safe.png?h=77cbc82936acf11b03bd687ff795e835">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a
-                        class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button"
-                        data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button class="btn-close" type="button" aria-label="Close"
-                        data-bs-dismiss="modal"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5"
-                                    src="assets/img/portfolio/submarine.png?h=71572e367539ee27f418326f2361bce2">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque
-                                    assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam
-                                    velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a
-                        class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button"
-                        data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="assets/js/script.min.js?h=3732467a7c6307c364eceec5672d3db2"></script>
-</body>
+    
+    <script>
+        // Inisialisasi AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
 
-</html>
+        // Fungsi Download CV
+        function downloadCV() {
+            const fileUrl = 'assets/download/CV Rizky Fajar Anugrah.pdf';
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = 'CV_Rizky_Fajar_Anugrah.pdf'; // Nama file yang akan diunduh
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
 
-<script>
-    function downloadCV() {
-        const fileUrl = 'assets/download/CV Rizky Fajar Anugrah.pdf';
-        const link = document.createElement('a');
-        link.href = fileUrl;
-        link.download = 'CV Rizky Fajar Anugrah.pdf';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
+        // Fungsi Generate Pesan WhatsApp
+        function generateWhatsAppMessage() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var message = document.getElementById('message').value;
 
-    function generateWhatsAppMessage() {
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var phone = document.getElementById('phone').value;
-    var message = document.getElementById('message').value;
+            if (!name || !email || !message) {
+                alert('Mohon isi kolom Nama, Email, dan Pesan.');
+                return;
+            }
 
-    var whatsappMessage = "Halo, saya " + name + ". Saya ingin menghubungi Anda. Atau Anda bisa menghubungi saya melalui email " + email + " atau nomor telepon " + phone + ". Pesan: " + message + ". Terima kasih.";
-    var whatsappURL = "https://wa.me/6281243438087?text=" + encodeURIComponent(whatsappMessage);
+            var whatsappMessage = "Halo, saya " + name + ".\n\n" +
+                                "Pesan: " + message + "\n\n" +
+                                "Anda bisa menghubungi saya kembali melalui email: " + email + 
+                                (phone ? " atau telepon: " + phone : "") + ".\n\n" +
+                                "Terima kasih.";
 
-    window.open(whatsappURL, '_blank');
-}
+            var whatsappURL = "https://wa.me/6281243438087?text=" + encodeURIComponent(whatsappMessage);
+
+            window.open(whatsappURL, '_blank');
+        }
     </script>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/splide.min.js"></script>
-    <script src="js/scripts.js"></script>
+
+</body>
+</html>
