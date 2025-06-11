@@ -2,14 +2,12 @@
 <html lang="id" data-bs-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rizky Fajar Anugrah - Portofolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
   <style>
-    body {
-      scroll-behavior: smooth;
-    }
+    body { scroll-behavior: smooth; }
     .hero {
       background: linear-gradient(to right, #1e3c72, #2a5298);
       color: white;
@@ -23,25 +21,19 @@
       border-radius: 50%;
       border: 4px solid white;
     }
-    .navbar-brand {
-      font-weight: bold;
-    }
-    section {
-      padding: 60px 0;
-    }
+    .navbar-brand { font-weight: bold; }
+    section { padding: 60px 0; }
     .skill-icon {
       width: 50px;
       height: 50px;
       object-fit: contain;
     }
-    footer a {
-      color: inherit;
-    }
+    footer a { color: inherit; }
   </style>
 </head>
-<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="70" tabindex="0">
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="70">
 
-<!-- NAVBAR -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top" id="mainNavbar">
   <div class="container">
     <a class="navbar-brand" href="#">RFA</a>
@@ -64,7 +56,7 @@
   </div>
 </nav>
 
-<!-- HERO SECTION -->
+<!-- Hero -->
 <header class="hero" id="home">
   <div class="container">
     <img src="assets/img/iki2.jpg" alt="Rizky Fajar Anugrah" />
@@ -76,7 +68,8 @@
     </div>
   </div>
 </header>
-<!-- TENTANG SAYA -->
+
+<!-- Tentang Saya -->
 <section class="bg-light" id="about">
   <div class="container">
     <h2 class="text-center mb-4" id="aboutTitle">Tentang Saya</h2>
@@ -95,46 +88,41 @@
   </div>
 </section>
 
-<!-- PORTOFOLIO -->
+<!-- Portfolio -->
 <section id="portfolio">
   <div class="container">
     <h2 class="text-center mb-4" id="portfolioTitle">Proyek Terbaru</h2>
     <div class="row g-4">
-      <!-- Proyek 1 -->
       <div class="col-md-4">
         <div class="card h-100 shadow">
           <img src="assets/img/portfolio/kfpb-login.png" class="card-img-top" alt="e-KFPB" />
           <div class="card-body">
             <h5 class="card-title">e-KFPB</h5>
-            <p class="card-text">Aplikasi internal Kimia Farma. Mengelola permintaan barang teknik, QMS, dan Change Control.</p>
+            <p class="card-text">Aplikasi internal Kimia Farma. Permintaan barang teknik, QMS, dan Change Control.</p>
             <span class="badge bg-primary">PHP</span>
             <span class="badge bg-secondary">SQL</span>
             <span class="badge bg-info text-dark">jQuery</span>
           </div>
         </div>
       </div>
-
-      <!-- Proyek 2 -->
       <div class="col-md-4">
         <div class="card h-100 shadow">
           <img src="assets/img/portfolio/esdm-login.png" class="card-img-top" alt="eSDM" />
           <div class="card-body">
             <h5 class="card-title">eSDM</h5>
-            <p class="card-text">Sistem absensi karyawan Kimia Farma dengan API integrasi dan dua level user.</p>
+            <p class="card-text">Sistem absensi Kimia Farma + integrasi API ke pusat.</p>
             <span class="badge bg-primary">PHP</span>
             <span class="badge bg-secondary">SQL</span>
             <span class="badge bg-info text-dark">jQuery</span>
           </div>
         </div>
       </div>
-
-      <!-- Proyek 3 -->
       <div class="col-md-4">
         <div class="card h-100 shadow">
           <img src="assets/img/portfolio/edocs-login.png" class="card-img-top" alt="eDocs" />
           <div class="card-body">
             <h5 class="card-title">eDocs</h5>
-            <p class="card-text">Pengelolaan dokumen internal berbasis web. Mendukung versi dokumen dan hak akses terkontrol.</p>
+            <p class="card-text">Manajemen dokumen berbasis web dengan kontrol versi & akses.</p>
             <span class="badge bg-primary">PHP</span>
             <span class="badge bg-secondary">MySQL</span>
             <span class="badge bg-success">Bootstrap</span>
@@ -145,20 +133,17 @@
   </div>
 </section>
 
-<!-- SKILL -->
+<!-- Skill -->
 <section id="skills" class="bg-light">
   <div class="container">
     <h2 class="text-center mb-4" id="skillTitle">Skill & Tools</h2>
     <div class="row text-center gy-4">
-      <!-- Baris 1 -->
       <div class="col-3 col-md-2"><img src="assets/img/skills/html-5.png" class="skill-icon" alt="HTML" /><p>HTML</p></div>
       <div class="col-3 col-md-2"><img src="assets/img/skills/css.png" class="skill-icon" alt="CSS" /><p>CSS</p></div>
       <div class="col-3 col-md-2"><img src="assets/img/skills/js.png" class="skill-icon" alt="JS" /><p>JavaScript</p></div>
       <div class="col-3 col-md-2"><img src="assets/img/skills/bootstrap.png" class="skill-icon" alt="Bootstrap" /><p>Bootstrap</p></div>
       <div class="col-3 col-md-2"><img src="assets/img/skills/tailwind.svg" class="skill-icon" alt="Tailwind" /><p>Tailwind</p></div>
       <div class="col-3 col-md-2"><img src="assets/img/skills/vue.svg" class="skill-icon" alt="Vue" /><p>Vue</p></div>
-
-      <!-- Baris 2 -->
       <div class="col-3 col-md-2"><img src="assets/img/skills/vuetify.svg" class="skill-icon" alt="Vuetify" /><p>Vuetify</p></div>
       <div class="col-3 col-md-2"><img src="assets/img/skills/laravel.svg" class="skill-icon" alt="Laravel" /><p>Laravel</p></div>
       <div class="col-3 col-md-2"><img src="assets/img/skills/ci.svg" class="skill-icon" alt="CI" /><p>CodeIgniter</p></div>
@@ -168,29 +153,21 @@
     </div>
   </div>
 </section>
-<!-- KONTAK -->
+
+<!-- Kontak -->
 <section id="contact">
   <div class="container">
     <h2 class="text-center mb-4" id="contactTitle">Hubungi Saya</h2>
     <form class="mx-auto" style="max-width: 500px;" onsubmit="sendWhatsApp(); return false;">
-      <div class="mb-3">
-        <label for="nameInput" class="form-label" id="formNameLabel">Nama</label>
-        <input type="text" class="form-control" id="nameInput" required />
-      </div>
-      <div class="mb-3">
-        <label for="emailInput" class="form-label" id="formEmailLabel">Email</label>
-        <input type="email" class="form-control" id="emailInput" required />
-      </div>
-      <div class="mb-3">
-        <label for="messageInput" class="form-label" id="formMessageLabel">Pesan</label>
-        <textarea class="form-control" id="messageInput" rows="4" required></textarea>
-      </div>
+      <div class="mb-3"><label class="form-label" id="formNameLabel">Nama</label><input type="text" class="form-control" id="nameInput" required /></div>
+      <div class="mb-3"><label class="form-label" id="formEmailLabel">Email</label><input type="email" class="form-control" id="emailInput" required /></div>
+      <div class="mb-3"><label class="form-label" id="formMessageLabel">Pesan</label><textarea class="form-control" id="messageInput" rows="4" required></textarea></div>
       <button type="submit" class="btn btn-primary">Kirim via WhatsApp</button>
     </form>
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer class="text-center py-4 bg-primary text-white mt-5">
   <p class="mb-1">© 2025 Rizky Fajar Anugrah</p>
   <div class="d-flex justify-content-center gap-3">
@@ -202,12 +179,11 @@
   </div>
 </footer>
 
-<!-- SCRIPT -->
+<!-- Scripts -->
 <script>
   function toggleTheme() {
     const html = document.documentElement;
-    const current = html.getAttribute('data-bs-theme');
-    html.setAttribute('data-bs-theme', current === 'light' ? 'dark' : 'light');
+    html.setAttribute("data-bs-theme", html.getAttribute("data-bs-theme") === "light" ? "dark" : "light");
   }
 
   function setLanguage(lang) {
@@ -224,7 +200,7 @@
       },
       en: {
         aboutTitle: "About Me",
-        aboutText: "I am Rizky Fajar Anugrah, passionate about programming and always expanding my knowledge in the field. I aim to create technology that benefits companies, people, and my future self.",
+        aboutText: "I am Rizky Fajar Anugrah, passionate about programming and always expanding my skills. I aim to build solutions that benefit companies, people, and my future.",
         portfolioTitle: "Latest Projects",
         skillTitle: "Skills & Tools",
         contactTitle: "Contact Me",
@@ -233,9 +209,9 @@
         formMessageLabel: "Message"
       }
     };
-    const langText = text[lang];
-    for (const key in langText) {
-      document.getElementById(key).innerText = langText[key];
+    const t = text[lang];
+    for (const key in t) {
+      document.getElementById(key).innerText = t[key];
     }
   }
 
@@ -243,12 +219,11 @@
     const name = document.getElementById('nameInput').value;
     const email = document.getElementById('emailInput').value;
     const message = document.getElementById('messageInput').value;
-    const text = `Halo, saya ${name}. Saya ingin menghubungi Anda. Email: ${email}. Pesan: ${message}`;
+    const text = `Halo, saya ${name}. Email: ${email}. Pesan: ${message}`;
     const url = "https://wa.me/6281243438087?text=" + encodeURIComponent(text);
     window.open(url, "_blank");
   }
 </script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
